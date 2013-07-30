@@ -40,6 +40,9 @@ Gets or sets the current position.
 ### source
 Returns the `source` string.
 
+### done
+Returns true when the `position` is at the end.
+
 ### consume(regexp)
 Executes the `regexp` against the `source` at the current `position`. If the match fails, the position is not changed.
 

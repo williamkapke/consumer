@@ -55,6 +55,14 @@ Consumer.prototype = {
 
 
 	/**
+	 * Returns true when the position is at the end.
+	 */
+	get done(){
+		return this.position>=this.source.length;
+	},
+
+
+	/**
 	 * Peek at the source without consuming any characters.
 	 * @param {Number} howmany
 	 */

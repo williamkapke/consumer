@@ -57,4 +57,10 @@ describe("Consumer", function () {
 		consumer.position.should.equal(position);
 	});
 
+	it("`done` should return true only when its at the end", function () {
+		consumer.done.should.be.false;
+		consumer.consume(/.+/g);
+		consumer.done.should.be.true;
+	});
+
 });
