@@ -9,34 +9,42 @@ and/or with `RegExp`s.
 npm install consumed
 ```
 
-# API
+## API
 ```javascript
 var Consumer = require('consumer');
 
 var c = new Consumer("1234567890");
-console.log(c.consume(/\d/));
+var match = c.consume(/\d/);
+console.log(match);
 // ["1"]
-console.log(c.consume(/\d\d/));
-// ["2","3"]
+
+match = c.advance(1).consume(/(\d)(\d)/);
+console.log(match);
+// ["34","3","4"]
+
+console.log(c.current);
+// 5
+console.log(c.position);
+// 4
 ```
 
-## Consumer(source[, start]);
+### Consumer(source[, start]);
 Constructs a new Consumer object.
 
-## current
+### current
 Gets the character at the current index.
 
-## position
+### position
 Gets or sets the current position.
 
-## source
+### source
 Returns the `source` string.
 
-## consume(regexp)
+### consume(regexp)
 Executes the `regexp` against the `source` at the current `position`. If the match fails, the position is not changed.
 
-## peek(n)
+### peek(n)
 Gets the next `n` characters of the `source` starting at the current `position`.
 
-## advance(n)
+### advance(n)
 Advance the position ahead `n` characters.
