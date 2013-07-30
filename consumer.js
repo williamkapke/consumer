@@ -11,7 +11,7 @@
  * @param {String} source
  * @param {Number} [start=0]
  */
-module.exports = function Consumer(source, start){
+var Consumer = module.exports = function Consumer(source, start){
 	Object.defineProperty(this, "source", {
 		get: function(){
 			return source;
@@ -45,10 +45,10 @@ Consumer.prototype = {
 	 */
 	consume: function(regex){
 		//if it isn't global, `exec()` will not start at `lastIndex`
-		if(!x.global)
-			x.compile(x.source, flags(x));
-		x.lastIndex = this.position;
-		var m = x.exec(this.source);
+		if(!regex.global)
+			regex.compile(regex.source, flags(regex));
+		regex.lastIndex = this.position;
+		var m = regex.exec(this.source);
 		if(m) this.position += m[0].length;
 		return m;
 	},
@@ -56,10 +56,12 @@ Consumer.prototype = {
 
 	/**
 	 * Peek at the source without consuming any characters.
-	 * @param {RegExp|Number} x
+	 * @param {Number} howmany
 	 */
-	peek: function(x){
-		return this.source[this.position+x];
+	peek: function(howmany){
+		if(howmany===1)
+			return this.source[this.position+howmany];
+		return this.source.substr(this.position, howmany);
 	}
 };
 
