@@ -1,0 +1,27 @@
+{
+  "name": "consumer",
+  "version": "0.0.0",
+  "description": "Consume Javascipt strings character-by-character.",
+  "main": "consumer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/williamwicks/consumer.git"
+  },
+  "keywords": [
+    "string",
+    "iterator",
+    "caracter",
+    "by",
+    "character",
+    "string",
+    "reader"
+  ],
+  "author": "William Wicks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamwicks/consumer/issues"
+  }
+}
