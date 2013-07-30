@@ -4,7 +4,7 @@ var should = require('should');
 
 
 describe("Consumer", function () {
-	var consumer = new Consumer("1234567890");
+	var consumer = new Consumer("123456-7890");
 
 	function checkit(m, position){
 		should.exist(m);
@@ -43,17 +43,24 @@ describe("Consumer", function () {
 		re.global.should.be.true;
 	});
 
-
 	it("should not consume if the match fails", function () {
 		var position = consumer.position;
-		var m = consumer.consume(/x/);
+		var m = consumer.consume(/x/g);
 		consumer.position.should.equal(position);
 	});
+
+	it("should ignore matches that are not at the start `position`", function () {
+		var position = consumer.position;
+		var m = consumer.consume(/\d/g);
+		consumer.position.should.equal(position);
+		should.not.exist(m);
+	});
+
 
 	it("`peek` should not consume", function () {
 		var position = consumer.position;
 		var m = consumer.peek(3);
-		m.should.equal("789");
+		m.should.equal("-78");
 		consumer.position.should.equal(position);
 	});
 

@@ -49,6 +49,12 @@ Consumer.prototype = {
 			regex.compile(regex.source, flags(regex));
 		regex.lastIndex = this.position;
 		var m = regex.exec(this.source);
+
+		//all matches must start at the current position.
+		if(m && m.index!=this.position){
+			return null;
+		}
+
 		if(m) this.position += m[0].length;
 		return m;
 	},
