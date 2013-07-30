@@ -6,7 +6,7 @@ and/or with `RegExp`s.
 
 ## Install
 ```
-npm install consumed
+npm install consumer
 ```
 
 ## API
