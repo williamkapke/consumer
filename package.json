@@ -1,6 +1,6 @@
 {
   "name": "consumer",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Consume Javascipt strings character-by-character.",
   "main": "consumer.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/williamwicks/consumer.git"
+    "url": "https://github.com/williamkapke/consumer.git"
   },
   "devDependencies": {
 	  "mocha":"*",
@@ -20,9 +20,9 @@
     "character by character",
     "string reader"
   ],
-  "author": "William Wicks",
+  "author": "William Kapke",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/williamwicks/consumer/issues"
+    "url": "https://github.com/williamkapke/consumer/issues"
   }
 }

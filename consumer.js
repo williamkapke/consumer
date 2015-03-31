@@ -1,9 +1,3 @@
-/*!
- * Consumer
- * Copyright(c) 2013 William Wicks (wjwicks@gmail.com)
- * MIT Licensed
- */
-
 
 /**
  * Initialize `Consumer` with the given `source`.
